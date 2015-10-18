@@ -13,12 +13,12 @@
 @implementation Library
 
 - (BOOL)confirmAllSystemsGo {
-    if (![TestClass working]) {
+    if (![NSClassFromString(@"TestClass") working]) {
         NSLog(@"Not working yet.");
         return NO;
     }
 
-    TestClass *tc = [[TestClass alloc] init];
+    id tc = [[NSClassFromString(@"TestClass") alloc] init];
     return [tc objectExists];
 }
 
