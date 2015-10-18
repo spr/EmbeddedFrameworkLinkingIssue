@@ -11,6 +11,7 @@
 #import "library.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *status;
 
 @end
 
@@ -23,6 +24,8 @@
     Library *library = [[Library alloc] init];
 
     NSLog(@"All systems working: %@", [library confirmAllSystemsGo] ? @"YES" : @"NO");
+
+    self.status.text = [library confirmAllSystemsGo] ? @"Working" : @"Broken";
 }
 
 - (void)didReceiveMemoryWarning {
