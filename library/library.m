@@ -15,14 +15,12 @@
 @implementation Library
 
 - (BOOL)confirmAllSystemsGo {
-    void *dlhandle = dlopen("Test.framework/Test", RTLD_LAZY|RTLD_LOCAL);
     if (![NSClassFromString(@"TestClass") working]) {
         NSLog(@"Not working yet.");
         return NO;
     }
 
     id tc = [[NSClassFromString(@"TestClass") alloc] init];
-    dlclose(dlhandle);
     return [tc objectExists];
 }
 

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <dlfcn.h>
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    dlopen("Test.framework/Test", RTLD_LAZY|RTLD_GLOBAL);
+
     return YES;
 }
 
